@@ -196,7 +196,8 @@ if prompt:
                         continue
                         
                     # Atualiza o painel gráfico com o conteúdo consolidado até o momento
-                    texto_tela = texto_atual
+                    # Adicionamos os pedaços (deltas) à string principal a cada loop
+                    texto_tela += texto_atual
                     msg_placeholder.markdown(texto_tela + " ▍")
                     
                 # Fixar o texto final (remove o cursor)
