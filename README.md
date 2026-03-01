@@ -72,6 +72,11 @@ GROQ_API_KEY="sua_chave_aqui"
 ```
 5. Clique em **Deploy**!
 
+## ⚠️ Cota e Uso de API
+
+A infraestrutura dos agentes neste software está pré-configurada para rodar usando a camada gratuita (*Free Tier*) do modelo **Google Gemini 2.5 Flash**. 
+Se ocorrerem instabilidades no servidor ou o limite diário da conta for atingido, os agentes exibirão um aviso vermelho na tela. Recomendamos conectar a sua própria Chave de API (Google, OpenAI, Anthropic ou Groq) no arquivo `.env` (ou no painel Secrets do deploy) para aumentar o volume de operações do seu uso diário.
+
 ## 📜 Licença
 
 Este projeto é desenvolvido sob a **Licença MIT** (MIT License). Você tem permissão para usar, copiar, modificar, e distribuir este software de forma gratuita para fins pessoais ou comerciais, desde que o aviso de direitos autorais seja mantido. Veja o arquivo `LICENSE` para mais detalhes.
