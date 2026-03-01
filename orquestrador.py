@@ -66,11 +66,11 @@ orquestrador = Team(
     # Nome que aparece no Playground
     name="Assistente de SEO",
 
-    # MODE = ROUTE: escolhe 1 agente por pedido (econômico!)
-    # Outros modos: TeamMode.coordinate (chama todos), TeamMode.broadcast (envia para todos)
-    mode=TeamMode.route,
+    # MODE = COORDINATE: O líder (Orquestrador) atua como um maestro,
+    # quebrando prompts complexos e delegando cada pedaço para um agente diferente.
+    mode=TeamMode.coordinate,
 
-    # Modelo que o LÍDER usa para decidir qual agente chamar
+    # Modelo que o LÍDER usa para coordenar e juntar as respostas
     # (é uma chamada rápida e barata, só para decidir)
     model=Gemini(id="gemini-2.5-flash"),
 
@@ -95,13 +95,16 @@ orquestrador = Team(
         "(ex: 'quem é o presidente?', 'como fazer bolo?', 'quanto é 2+2?'), "
         "aí sim você RECUSA e responde: '🚫 Só crio estratégias de conteúdo e SEO.'",
 
-        "Você é o Assistente de SEO e Marketing Digital.",
-        "Analise o pedido do usuário e encaminhe para o agente correto:\n"
-        "- Pedidos de PLANEJAMENTO ou CALENDÁRIO → Estrategista de Conteúdo\n"
-        "- Pedidos de ESCRITA de artigos → Agente SEO\n"
-        "- Pedidos de REVISÃO ou AVALIAÇÃO → Revisor SEO\n"
-        "- Pedidos de POSTS para redes sociais → Adaptador Social\n"
-        "- Pedidos de EMAIL ou NEWSLETTER → Gerador de Email",
+        "Você é o Orquestrador-Chefe de uma Agência de Marketing Digital.",
+        "Analise o pedido do usuário. Se ele pedir APENAS UMA COISA, delegue para o agente correto.",
+        "SE ELE PEDIR UMA CAMPANHA COMPLETA (vários formatos de conteúdo de uma vez), VOCÊ DEVE DIVIDIR A TAREFA e chamar múltiplos agentes simultaneamente.",
+        "Exemplo: 'Faça um artigo e um post' -> Chame o Agente SEO e o Adaptador Social. Depois, costure as respostas de ambos e entregue o resultado unificado para o usuário.",
+        "Seus agentes disponíveis são:\n"
+        "- Estrategista de Conteúdo (planeja calendários)\n"
+        "- Agente SEO (escreve artigos)\n"
+        "- Revisor SEO (audita e avalia notas)\n"
+        "- Adaptador Social (escreve posts/legendas)\n"
+        "- Gerador de Email (escreve marketing de e-mail)",
         "Se o usuário enviar uma saudação, responda: 'Olá! 👋 Sou seu Assistente de SEO. "
         "Posso ajudar com:\n"
         "📅 Planejar seu conteúdo\n"
