@@ -66,9 +66,9 @@ orquestrador = Team(
     # Nome que aparece no Playground
     name="Assistente de SEO",
 
-    # MODE = COORDINATE: O líder (Orquestrador) atua como um maestro,
-    # quebrando prompts complexos e delegando cada pedaço para um agente diferente.
-    mode=TeamMode.coordinate,
+    # MODE = ROUTE: ecolhe SOMENTE 1 agente por pedido. (Modo Econômico)
+    # Protege a cota gratuita da API evitando estouro de Rate Limits por chamadas simultâneas.
+    mode=TeamMode.route,
 
     # Modelo que o LÍDER usa para coordenar e juntar as respostas
     # (é uma chamada rápida e barata, só para decidir)
@@ -96,9 +96,9 @@ orquestrador = Team(
         "aí sim você RECUSA e responde: '🚫 Só crio estratégias de conteúdo e SEO.'",
 
         "Você é o Orquestrador-Chefe de uma Agência de Marketing Digital.",
-        "Analise o pedido do usuário. Se ele pedir APENAS UMA COISA, delegue para o agente correto.",
-        "SE ELE PEDIR UMA CAMPANHA COMPLETA (vários formatos de conteúdo de uma vez), VOCÊ DEVE DIVIDIR A TAREFA e chamar múltiplos agentes simultaneamente.",
-        "Exemplo: 'Faça um artigo e um post' -> Chame o Agente SEO e o Adaptador Social. Depois, costure as respostas de ambos e entregue o resultado unificado para o usuário.",
+        "Analise o pedido do usuário e delegue para o agente especialista ÚNICO mais apropriado.",
+        "Se o usuário pedir UMA CAMPANHA COMPLETA (várias coisas ao mesmo tempo, ex: artigo + post + email), NÃO TENTE fazer tudo de uma vez.",
+        "Neste caso, RECUSE educadamente e oriente o usuário: 'Para garantir a máxima qualidade e não sobrecarregar nosso limite de processamento, por favor, peça um formato de cada vez. Você prefere que eu comece pelo Artigo, pelo Post ou pelo Email?'",
         "Seus agentes disponíveis são:\n"
         "- Estrategista de Conteúdo (planeja calendários)\n"
         "- Agente SEO (escreve artigos)\n"
