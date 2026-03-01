@@ -29,6 +29,25 @@ O projeto utiliza um Orquestrador (Team Leader) que analisa seu pedido e roteia 
 - **Modelos de Linguagem (LLMs):** Google Gemini 2.5 Flash / Groq
 - **Gerenciador de Pacotes:** uv (Extremamente rápido)
 
+## 💡 Exemplos de Prompts para o Chat
+
+Você pode interagir livremente com a agência. Aqui estão alguns exemplos testados para extrair o máximo do orquestrador ou de agentes individuais:
+
+- 🤖 **Orquestrador Central (Planejamento)**
+  > *"Acabei de lançar uma clínica odontológica. Monte um calendário de ideias para 3 posts no Instagram focados em captação de clientes. Avalie a melhor estratégia."*
+
+- 🔍 **Agente Redator SEO**
+  > *"Escreva um artigo de blog sobre as 5 principais tendências de design de interiores. Otimize a meta description e use a palavra-chave 'arquitetura moderna' ao longo do texto."*
+
+- �️ **Agente Revisor SEO**
+  > *"Analise o artigo abaixo e me dê uma nota de 0 a 100 para SEO. Sugira melhorias na densidade de palavras-chave e verifique se o tom de voz está persuasivo. [cole o texto aqui]"*
+
+- �📱 **Agente de Redes Sociais**
+  > *"Crie um roteiro para um Reels do Instagram dando três dicas essenciais para iniciantes começarem a investir. Finalize com uma chamada para ação (CTA) para o link da bio."*
+
+- 📧 **Agente de Email Marketing**
+  > *"Escreva um email persuasivo de remarketing para clientes que abandonaram o carrinho comprando um tênis de corrida na minha loja. Ofereça 10% de desconto no assunto do email."*
+
 ## 🚀 Como Rodar Localmente
 
 Se quiser rodar os agentes no seu próprio computador:
