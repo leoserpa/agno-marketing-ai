@@ -4,6 +4,11 @@
 
 Assistente inteligente e autônomo com **5 agentes especializados** em Marketing Digital e SEO, construído com o poderoso framework **[Agno](https://agno.com)** e interface moderna em **[Streamlit](https://streamlit.io)**.
 
+<div align="center">
+  <img src="assets/img1.png" alt="Tela Principal da Agência IA" width="48%">
+  <img src="assets/img2.png" alt="Chat e Execução dos Agentes" width="48%">
+</div>
+
 ## 💼 A Equipe de Agentes
 
 O projeto utiliza um Orquestrador (Team Leader) que analisa seu pedido e roteia para o especialista adequado:
